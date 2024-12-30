@@ -1,9 +1,5 @@
 "use client";
-import Image from "next/image";
-import { motion } from "motion/react";
 import BannerDiary from "@/components/BannerDiary";
-import useIsMobile from "@/hooks/useIsMobile";
-import { ReactElement, useEffect } from "react";
 import useViewport from "@/hooks/useViewport";
 import Link from "next/link";
 import { NextPageWithLayout } from "../_app";

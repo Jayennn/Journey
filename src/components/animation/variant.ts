@@ -1,3 +1,4 @@
+
 export const variant = {
   container: {
     hidden: {
@@ -42,7 +43,7 @@ export const variant = {
   },
   pullupVariant: {
     hidden: { y: 100, opacity: 0 },
-    visible: (i: any) => ({
+    visible: (i: number) => ({
       y: 0,
       opacity: 1,
       transition: {

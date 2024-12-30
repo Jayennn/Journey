@@ -1,4 +1,4 @@
-import Image, { ImageProps, StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react"
 import Link from "next/link";
 

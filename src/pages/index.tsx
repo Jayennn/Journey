@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Tiffany's Journey",
+  title: "Tiffany's-Journey",
   icons: "/image/ranpo.jpg"
 }
 
@@ -20,8 +20,8 @@ export default function Home() {
         />
         <div className="flex flex-col items-center gap-4 font-product-sans">
           <div className="font-bold">
-            <h1 className="block md:hidden text-xl">Tiffany's journey</h1>
-            <h1 className="hidden md:block text-6xl">Tiffany's</h1>
+            <h1 className="block md:hidden text-xl">Tiffany&apos;s journey</h1>
+            <h1 className="hidden md:block text-6xl">Tiffany&apos;s</h1>
             <h4 className="hidden md:block text-4xl">Journey</h4>
           </div>
           <div className="w-full flex gap-2">

@@ -1,7 +1,7 @@
 "use client";
-import { AnimatePresence, motion, useAnimation, useInView, type Variants } from "motion/react";
+import { AnimatePresence, motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
-import { variant, VariantKeys } from "./variant";
+import { variant } from "./variant";
 import { cn } from "@/lib/utils";
 
 type AnimatedPropsType = {
@@ -11,7 +11,7 @@ type AnimatedPropsType = {
 
 
 const AnimatedTextUp = ({ word, className }: AnimatedPropsType) => {
-  let letters = word.split("");
+  const letters = word.split("");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -24,7 +24,7 @@ const AnimatedTextUp = ({ word, className }: AnimatedPropsType) => {
     return () => {
       mainControls.stop();
     };
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
 
 

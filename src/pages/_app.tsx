@@ -1,22 +1,24 @@
 import "@/styles/globals.css";
-import { useEffect, type ReactElement, type ReactNode } from 'react'
-import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
+import { useEffect, type ReactElement, type ReactNode } from "react";
+import type { NextPage } from "next";
+import type { AppProps } from "next/app";
 import Lenis from "lenis";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/router";
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
+export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
+  Component: NextPageWithLayout;
+};
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const router = useRouter()
-  // Use the layout defined at the page level, if available
+  const router = useRouter();
+
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 3,
@@ -24,9 +26,8 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       autoResize: true,
       touchMultiplier: 2,
       infinite: false,
-      smoothWheel: true
+      smoothWheel: true,
     });
-
 
     function raf(time: number) {
       lenis.raf(time);
@@ -36,38 +37,11 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     requestAnimationFrame(raf);
   }, []);
 
-  const getLayout = Component.getLayout ?? ((page) => page)
-
-  // return getLayout(
-  //   <AnimatePresence mode="wait">
-  //     <motion.div key={router.pathname}>
-  //       <Component {...pageProps} />
-
-  //       <motion.div
-
-  //         className="slide-in absolute top-0 left-0 w-full h-screen bg-black origin-bottom"
-  //         initial={{ scaleY: 0 }}
-  //         animate={{ scaleY: 0 }}
-  //         exit={{ scaleY: 1 }}
-  //         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-  //       />
-  //       <motion.div
-  //         className="slide-out absolute top-0 left-0 w-full h-screen bg-black origin-top"
-  //         initial={{ scaleY: 1 }}
-  //         animate={{ scaleY: 0 }}
-  //         exit={{ scaleY: 0 }}
-  //         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-  //       />
-  //     </motion.div>
-  //   </AnimatePresence>
-  // )
-  return (
+  return getLayout(
     <AnimatePresence mode="wait">
       <motion.div key={router.pathname}>
         <Component {...pageProps} />
-
         <motion.div
-
           className="slide-in absolute top-0 left-0 w-full h-screen bg-black origin-bottom z-50"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 0 }}
@@ -83,5 +57,5 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         />
       </motion.div>
     </AnimatePresence>
-  )
+  );
 }
