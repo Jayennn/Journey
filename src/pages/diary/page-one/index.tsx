@@ -133,23 +133,26 @@ export default function PageOne() {
       <section className="py-32 h-screen min-h-screen">
         <div className="h-full relative container flex flex-col w-full font-product-sans text-[#424242]">
           <Image
-            className="absolute"
+            className="absolute -top-[9rem] left-10 md:top-0 md:left-0"
             src="/svg/blob_3.svg"
             width={360}
             height={360}
             alt="happy birthday language"
           />
           <Image
-            className="absolute bottom-0 right-0"
+            className="absolute -bottom-[10rem] right-0 md:bottom-0 md:right-0"
             src="/svg/blob_4.svg"
             width={360}
             height={360}
             alt="happy birthday language"
           />
           <h2 className="text-3xl font-bold bg-gradient-to-br from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">Oiya Hampir Lupa!</h2>
-          <h2 className="my-auto text-4xl font-bold text-center bg-gradient-to-br from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">Selamat Tahun Baru! <br /> Tiffany</h2>
-          <p className="text-right text-xl font-bold leading-5 bg-gradient-to-bl from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">
-            See You
+          <div className="my-auto flex flex-col items-center gap-2">
+            <h2 className="text-4xl font-bold text-center bg-gradient-to-br from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">Selamat Tahun Baru!</h2>
+            <p className="text-center max-w-3xl text-lg bg-gradient-to-br from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">May the coming year bring you closer to your goals, fill your life with love, and bring you endless joy. Cheers to a fantastic year ahead!</p>
+          </div>
+          <p className="text-right text-sm font-bold  bg-gradient-to-bl from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">
+            See You, Tiffany
             <br />
             2025
           </p>

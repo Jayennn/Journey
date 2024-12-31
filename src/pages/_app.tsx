@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <Component {...pageProps} />
         <motion.div
           className="slide-in absolute top-0 left-0 w-full h-screen bg-black origin-bottom z-50"
-          initial={{ scaleY: 0 }}
+          initial={{ scaleY: 0, }}
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
