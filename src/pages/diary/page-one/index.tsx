@@ -152,9 +152,7 @@ export default function PageOne() {
             <p className="text-center max-w-3xl text-lg bg-gradient-to-br from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">May the coming year bring you closer to your goals, fill your life with love, and bring you endless joy. Cheers to a fantastic year ahead!</p>
           </div>
           <p className="text-right text-sm font-bold  bg-gradient-to-bl from-[#3E5151] to-[#DECBA4] inline-block text-transparent bg-clip-text">
-            See You, Tiffany
-            <br />
-            2025
+            See Youu, Tiffany
           </p>
         </div>
       </section>
